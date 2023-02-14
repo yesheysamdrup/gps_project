@@ -1,0 +1,26 @@
+<script type="text/javascript">
+      $(document).ready(function () {
+            $('#sub_category_id').change(function () {
+                  $.post("/get_eplot", {
+                        plot_id: $('#sub_category_id').val(),
+                  }, function (plot) {
+                        $('#show_plot_categories').html(plot);
+                        $('#show_plot_categories').append(plot.htmlplot);
+                  });
+                  return false;
+            });
+      }); 
+</script>
+<form action="#" name="form" id="form" method="post">
+      <div class="form-group">
+            <label>Select Block</label>
+            <select name="sub_category" id="sub_category_id" class="form-control">
+                  <option value="" selected="selected"></option>
+                  {% for bdzongkhag,bdescr,bgewog in gewog %}
+                  <option value="{{bgewog}}">{{bdescr}}</option>
+                  {% endfor %}
+            </select>
+      </div>
+      <div id="show_plot_categories"></div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
