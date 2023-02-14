@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label>Select Plot Id</label>
+    <select name="plot_category" id="show_plot_categories" class="form-control">
+        <option value="" selected="selected"></option>
+        {% for eplotid,egewog in eplot %}
+        <option value="{{eplotid}}">{{egewog}}</option>
+        {% endfor %}
+    </select>
+</div>
