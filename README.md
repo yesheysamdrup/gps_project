@@ -1,1 +1,1 @@
-# gps_project for Kamal, Jiwang and Yeshey
+# gps_project for Kamal, Jiang and Yeshey
