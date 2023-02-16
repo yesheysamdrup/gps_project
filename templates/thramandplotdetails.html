@@ -22,19 +22,19 @@
     }
   </style>
 
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('#plot_id').submit(function () {
-      $.post("/get_plotid", {
-        plot_id: $('#plot_id').val(),
-      }, function (response) {
-        //$('#show_thramnplot').html(thramandplotdetails);
-        //$('#show_thramnplot').append(thramandplotdetails.htmlresponse);
-              });
-      return false;
-    });
-       }); 
-</script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#plot_id').submit(function () {
+        $.post("/get_plotid", {
+          plot_id: $('#plot_id').val(),
+        }, function (response) {
+          $('#show_sub_categories').html(plot);
+          $('#show_sub_categories').append(plot.htmlresponse);
+                  });
+        return false;
+      });
+         }); 
+  </script>
 </head>
 
 <body>
@@ -64,24 +64,21 @@
   <!-- Page content -->
   <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
-    <!-- Automatic Slideshow Images -->
-    <div class="mySlides w3-display-container w3-center">
-      <img src="/w3images/la.jpg" style="width:100%">
-      
-    </div>
     <!-- The Thram Section -->
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
       <div class="container">
         <div class="row">
           <!--<div class="col-lg-2"></div>-->
           ><div class="col-lg-8">
-           <!--{{ url_for('plot') }}  <h3 align="center">Python Flask Dynamic Loading of ComboBox using jQuery Ajax and Mysql</h3>-->
-          <form action="#" name="form" id="form" method="post">
+           <!--<h3 align="center">Python Flask Dynamic Loading of ComboBox using jQuery Ajax and Mysql</h3>-->
+            <form action="#" name="form" id="form" method="post">
               <div id="plotid">
-                <label>Plot ID</label>
-                <input name="plot_id" id="plot_id"></input>
+                <label>Thram :</label>
+                <input name="thram" id="thram"></input>
               </div>
-              <button type="submit" class="btn btn-primary">Search</button>
+              <div id="#show_thramnplot"></div>
+              <button type="submit" class="btn btn-primary">Print</button>
+              <button type="submit" class="btn btn-primary">Save as PDF</button>
             </form>
           </div>
           <div class="col-lg-2"></div>
